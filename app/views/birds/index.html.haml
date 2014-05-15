@@ -1,0 +1,21 @@
+-@birds.each do |b|
+	=b.name
+	%br
+	.div{class: "#{b.color}"}
+		=b.color
+	%br
+	.div{class: "#{b.size}"}
+		=b.size
+	%br
+	=link_to "destroy this bird|" ,bird_path(b.id), :method => "delete"
+	=link_to "|update this bird"
+	%br
+	%br
+
+=form_for @new_bird, url: birds_path, method: :post do |b|
+	name:
+	=b.text_field :name
+	color
+	=b.select :color, options_for_select([['Blue', "blue"],["Red", "red"],["Yellow", 'yellow']])
+	=b.select :size, options_for_select([["Small", 'small'],["Medium", "medium"],["Large", "large"]])
+	=b.submit class: "button"
