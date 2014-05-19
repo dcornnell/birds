@@ -55,7 +55,10 @@ $('.new_bird').submit(function() {
 		dataType: "JSON"
 	}).success(function(data){
 		if (data == 1) {
+			
 			location.reload(true);
+			
+
 			console.log("true");
 		}
 		else {
