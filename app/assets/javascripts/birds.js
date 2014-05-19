@@ -66,7 +66,33 @@ $('.new_bird').submit(function() {
 });
 
 
+//Delete
 
+$('.remove').on('click', function(){
+  var bird_id = $(this).attr('data-bird-id');
+  var panel = $(this);
+  console.log(bird_id);
+
+  $.ajax({
+    url: "/birds/" + bird_id,
+    type: "DELETE",
+    data:{
+
+    },
+    success: function(data){
+      console.log(data);  
+        if (data == "1") {
+          console.log("true");
+          $(panel).parents('.birdcage').hide("slow");
+        }
+        else {
+
+        }
+      }
+      });
+
+});
+        
 
 
 

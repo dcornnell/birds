@@ -28,20 +28,14 @@ class BirdsController < ApplicationController
 		end
 	end
 
-		def destroy
+	def destroy
 		@bird = Bird.find(params[:id])
 		if @bird.destroy 
-			redirect_to birds_path
-			# respond_to do |format|
-			# 	format.js
-			# 	format.html { redirect_to users_path }
 			
-		else
-			redirect_to birds_path
-			# respond_to do |format|
-			# 	format.js {render plain: "0"}
-			# 	format.html {redirect_to users_path}
-			
+			respond_to do |format|
+				format.js
+				format.html { redirect_to users_path }
+			end
 		end
 	end
 
