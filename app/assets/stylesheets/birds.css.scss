@@ -53,9 +53,15 @@
 
 .updatebox {
 	
-	position:absolute;
+	height: 300px;
+	width: 400px;
+	margin-left: -200px;
+	margin-top:-150px;
+	position:fixed;
+	top:50%;
+	left:50%;
 	z-index:100;
-
+	float:left;
 	background-color:#f0f0f0;
 	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -64,12 +70,18 @@
 }
 
 .newbox {
-	position:absolute;
+	height: 300px;
+	width: 400px;
+	margin-left: -200px;
+	margin-top:-150px;
+	position:fixed;
+	top:50%;
+	left:50%;
 	z-index:100;
 	background-color:#f0f0f0;
 	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .birdcage {
@@ -141,4 +153,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 .large{
 	height:75px;
 	width:100px;
+}
+
+#fixed-div {
+    width:200px;
+    background-color:brown;
+    margin-left:-100px;
+    position: fixed;
+    left:50%;
+    bottom:0;
+    z-index:400;
 }

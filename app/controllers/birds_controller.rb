@@ -8,7 +8,7 @@ class BirdsController < ApplicationController
 		@new_bird = Bird.create(bird_params)
 		respond_to do |format|
 			format.html { redirect_to birds_path}
-			format.js
+			format.js {render json: @new_bird}
 			
 		end
 	end
