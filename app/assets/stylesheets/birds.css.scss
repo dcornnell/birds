@@ -3,26 +3,141 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+.upperBeak {
+	background-color:#ff4700;
+	box-shadow:inset 9px -3px 6px 3px #a64700;
+	width:20px;
+	height:10px;
+	border-radius:100px 0px 0px 0px;
+	float:left;
+	position:relative;
+	margin-left:10px;
+	margin-top:7px;
+		
+}
+
+.lowerBeak {
+	background-color:#a64700;
+	box-shadow:inset 9px 3px 6px 3px #ff4700;
+	width:20px;
+	height:10px;
+	border-radius:0px 0px 0px 100px;
+	float:left;
+	position:relative;
+	margin-left:10px;
+	z-index:10;
+	overflow:auto;
+	
+}
+
+.eye {
+	background-color:white;
+	border: 1px grey solid;
+	width:10px;
+	height:10px;
+	border-radius:100px;
+	float:left;
+	position:relative;
+	margin-left:10px;
+	margin-top:10px;
+	
+}
+
+
+
+
+.hidden {
+	display:none;
+}
+
+.updatebox {
+	
+	position:absolute;
+	z-index:100;
+
+	background-color:#f0f0f0;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	
+}
+
+.newbox {
+	position:absolute;
+	z-index:100;
+	background-color:#f0f0f0;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.birdcage {
+
+	width:100px;
+	height:100px;
+	display: inline-block;
+	margin: 10px 10px 40px 10px;
+	float:left;
+	text-align:center;
+}
+
+
+
+.name {
+	
+	text-align: center;
+	margin-top:5px;
+}
+.bird {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 100px;
+	text-align:center;
+}
+
+.bird:hover {
+	margin-top:-10px;
+	margin-bottom:25px;
+
+}
+
+.bird:hover .lowerBeak {
+	margin-top:5px;
+}
+
+
+.newbird {
+	text-align:center;
+}
+
 .blue {
-	color:blue;
+	background-color:#ff00ff;
+	box-shadow:inset -9px -6px 11px 3px #a600a6;
 }
 
 .red {
-	color:red;
+	background-color:#ff0000;
+	box-shadow:inset -9px -6px 11px 3px #a60000;
 }
 
 .yellow{
-	color:yellow;
+	background-color:#ffff00;
+	box-shadow:inset -9px -6px 11px 3px #a6a600;
 }
 
 .small{
-	font-size:10px;
+	height:75px;
+	width:40px;
 }
 
 .medium{
-	font-size:20px;
+	height:75px;
+	width:60px;
 }
 
 .large{
-	font-size:30px;
+	height:75px;
+	width:100px;
 }

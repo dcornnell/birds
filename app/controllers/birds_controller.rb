@@ -6,32 +6,38 @@ class BirdsController < ApplicationController
 
 	def create
 		@new_bird = Bird.create(bird_params)
-		if @new_bird.save
-			redirect birds_path
-		else
-			redirect birds_path
+		respond_to do |format|
+			format.html { redirect_to birds_path}
+			format.js
+			
 		end
 	end
 
 	def update
 		@bird = Bird.find(params[:id])
-		if @bird.update_atrributes(bird_params)
-			redirect birds_path
+		if @bird.update_attributes(bird_params)
+			respond_to do |format|
+				format.js
+				format.html { redirect_to birds_path }
+			end
 		else
-			redirect birds_path
+			respond_to do |format|
+				format.js {render plain: "0"}
+				format.html {redirect_to birds_path}
+			end
 		end
 	end
 
 		def destroy
 		@bird = Bird.find(params[:id])
 		if @bird.destroy 
-			redirect birds_path
+			redirect_to birds_path
 			# respond_to do |format|
 			# 	format.js
 			# 	format.html { redirect_to users_path }
 			
 		else
-			redirect birds_path
+			redirect_to birds_path
 			# respond_to do |format|
 			# 	format.js {render plain: "0"}
 			# 	format.html {redirect_to users_path}
