@@ -22,24 +22,16 @@ $('.edit_bird').submit(function() {
 			raw_id 				 = $(this).attr('id');
 			bird_id 			 = raw_id.replace('edit_bird_', '');
 	
-	console.log(bird_id);	
-	console.log(valuesToSubmit);
 	$.ajax({
 		url: "/birds/" + bird_id,
 		type: 'PATCH',
 		data: valuesToSubmit,
 		dataType: "JSON"
-	}).success(function(data){
-		if (data == 1) {
-			console.log("true");
-			$('.bird').fadeOut("fast");
-
-			location.reload(true);
-			$('.bird').fadeIn("fast");
-		}
-		else {
-			console.log("false");
-		}
+	}).success(function(json){
+		console.log(json);
+		console.log(json.id);
+		console.log("#"+json.id);
+		$("#" + json.id).replaceWith('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>');
 	});
 	return false;
 });
@@ -55,7 +47,7 @@ $('.new_bird').submit(function() {
 		dataType: "JSON"
 	}).success(function(json){
 		 $('#wire').append('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>');
-		
+			$('.newbox').fadeOut("fast");
 	});
 	return false;
 });
@@ -103,12 +95,6 @@ $(document).on('click', '.remove', function(){
 // 	var item =data.responseText,
 // 			 item_li = document.getElelmentById(data.id)
 // 			 name =item.name;
-// 		$('#item_li').replace('<li>' + name + "</li>")
+// 		$('#item_li').replace('<li>' + name + "</li>");
 // }
-
-
-
-
-		
 	
-// 	

@@ -17,7 +17,7 @@ class BirdsController < ApplicationController
 		@bird = Bird.find(params[:id])
 		if @bird.update_attributes(bird_params)
 			respond_to do |format|
-				format.js
+				format.js {render json: @bird }
 				format.html { redirect_to birds_path }
 			end
 		else
