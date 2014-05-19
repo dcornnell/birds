@@ -12,7 +12,8 @@ $('.newbird').on('click', function(){
 })
 
 //EDIT
-$('.name').on( "click", function() {
+$(document).on('click', '.name', function(){
+	console.log('i was clicked');
 	var bird_id = $(this).parents('.birdcage').attr('id');
 	$('#update-' + bird_id).fadeIn("fast");
 });
@@ -31,7 +32,7 @@ $('.edit_bird').submit(function() {
 		console.log(json);
 		console.log(json.id);
 		console.log("#"+json.id);
-		$("#" + json.id).replaceWith('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>');
+		$("#" + json.id).replaceWith('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div><div class="wing ' + json.color + '"><br></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>');
 	});
 	return false;
 });
@@ -46,7 +47,7 @@ $('.new_bird').submit(function() {
 		data: valuesToSubmit,
 		dataType: "JSON"
 	}).success(function(json){
-		 $('#wire').append('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>');
+		 $('#wire').append('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div><div class="wing ' + json.color + '"><br></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>');
 			$('.newbox').fadeOut("fast");
 	});
 	return false;
