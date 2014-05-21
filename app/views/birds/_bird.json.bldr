@@ -1,0 +1,3 @@
+object @new_bird do
+	attributes :name, :color, :size
+end
