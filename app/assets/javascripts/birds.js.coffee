@@ -37,6 +37,7 @@ $('.new_bird').submit ->
 		data: valuesToSubmit
 		dataType: "JSON"
 		success: (json) ->
+			console.log(json)
 			$('#wire').append('<div class="birdholder"><div class="birdcage" id="' + json.id + '"><div class="bird ' + json.color + ' ' + json.size + ' "><div class="row"><div class="eye"></div><div class="eye"></div></div><div class="row"><div class=upperBeak></div></div><div class="row"><div class="lowerBeak"></div></div><div class="wing ' + json.color + '"><br></div></div><div class="name"> ' + json.name + '</div><div class="remove" data-bird-id="' + json.id + '">X</div></div></div></div>')
 			$('.newbox').fadeOut("fast")
 		false

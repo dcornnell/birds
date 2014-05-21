@@ -99,9 +99,9 @@
 
 
 .bird {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+	position:absolute;
+	
+	
 	border-radius: 100px;
 	text-align:center;
 	-webkit-animation: bounce 3s infinite ;
@@ -118,7 +118,11 @@
  .name {
 	
 	text-align: center;
-	margin-top:5px;
+	margin-top:80px;
+
+	position:absolute;
+
+
 	
 	
 }
@@ -215,4 +219,35 @@
 	100% {margin-top:0px;}
 }
 
-
+.cool {
+    position: relative;
+    margin-left: -10px;
+    margin-top:10px;
+    z-position:5000;
+}
+.cool > i {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 12.5px solid #020202;
+    border-top: none;
+    border-bottom-right-radius: 12.5px;
+    border-bottom-left-radius: 12.5px;
+    left: 0px;
+    top: 0px;
+}
+.cool > i+i {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 12.5px solid #000000;
+    border-top: none;
+    border-bottom-right-radius: 12.5px;
+    border-bottom-left-radius: 12.5px;
+    left: 25px;
+    top: 0px;
+}
