@@ -1,0 +1,3 @@
+collection :birds => @birds do
+	attributes :name, :color, :size
+end

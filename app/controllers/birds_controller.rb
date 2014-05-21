@@ -2,14 +2,19 @@ class BirdsController < ApplicationController
 	def index
 		@birds = Bird.all
 		@new_bird = Bird.new
+		respond_to do |format|
+			format.json
+			format.html
+		end
 	end
 
 	def create
-		@new_bird = Bird.create(bird_params)
-		respond_to do |format|
-			format.html { redirect_to birds_path}
-			format.js {render json: @new_bird}
-			
+		@birds = Bird.all
+		@new_bird = Bird.new(bird_params)
+		if @new_bird.save
+			render @new_bird
+		else
+			render nothing: true	
 		end
 	end
 
