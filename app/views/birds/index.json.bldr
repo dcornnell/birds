@@ -1,3 +1,8 @@
 collection :birds => @birds do
 	attributes :name, :color, :size
+
+	collection :styles => @birds.style do
+		attribute :name 
 end
+
+
