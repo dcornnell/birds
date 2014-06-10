@@ -1,7 +1,7 @@
 object @new_bird do
 	attributes :name, :color, :size
 
-	collection :styles => @new_bird.style do
+	object :style => @new_bird.style do
 		attribute :name
 	end
 end

@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+	a simple one page app to learn ajax and java script. i was getting tired of plain, tables and lists so i made some birds instead
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+## Installation/Setup
+
+Clone repot locally. Install gems:
+		bundle install
+
+Set up database. im using postgres on this thing
+		rake db:create db:migrate
+
+##Configure 
+		it should work right out the gate
+		no tests on this one yet
+
+##Contributing 
+If you really wanna add to this feel free to fork it and make a pull request, if your gonna do anything maybe make the birds look better, im not a designer.
+
+##Licence
+
+MIT licence
+
+
+
