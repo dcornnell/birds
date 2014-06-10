@@ -4,6 +4,9 @@
 
 	a simple one page app to learn ajax and java script. i was getting tired of plain, tables and lists so i made some birds instead
 
+	here is a link to it working:
+	http://cryptic-wildwood-1457.herokuapp.com/
+
 
 
 ## Installation/Setup
