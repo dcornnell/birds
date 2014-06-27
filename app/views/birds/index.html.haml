@@ -16,17 +16,12 @@
 					
 					.bird{class: "#{b.size} #{b.color}"}
 						
-						-if b.style_id == 1
-							.cool
-								%i
-								%i
-						-else
-							.row
-								.left-eye
-								.right-eye
-						.mirror-mirror
-							%i
-							%i
+						
+						
+						.row
+							.eye
+							.eye
+						
 						
 					
 
@@ -87,7 +82,7 @@
 			color
 			=b.select :color, options_for_select([['Blue', "blue"],["Red", "red"],["Yellow", 'yellow']])
 			=b.select :size, options_for_select([["Small", 'small'],["Medium", "medium"],["Large", "large"]])
-			=b.select :style_id, Style.all.collect { |i| [i.name, i.id]} , {include_blank: 'None'}
+			
 			
 			=b.submit class: "button tiny"
 			.div{class:"button tiny close"} Close this window
